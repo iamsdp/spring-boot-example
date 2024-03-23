@@ -19,5 +19,14 @@ public class Main {
     }
 
     // here record is class that carries some data
-    record GreetResponse(String greetmsg){}
+//    record GreetResponse(String greetmsg){}
+
+    class GreetResponse{
+        public String greetmsg;
+
+        GreetResponse(String msg)
+        {
+            this.greetmsg = msg;
+        }
+    }
 }
