@@ -22,11 +22,15 @@ public class Main {
 //    record GreetResponse(String greetmsg){}
 
     class GreetResponse{
-        public String greetmsg;
+        private String greetmsg;
 
         GreetResponse(String msg)
         {
             this.greetmsg = msg;
+        }
+
+        public String getGreetmsg() {
+            return greetmsg;
         }
     }
 }
