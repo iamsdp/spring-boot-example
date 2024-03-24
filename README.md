@@ -22,6 +22,28 @@ CREATE DATABASE
 amigoscode=# \l
 amigoscode=#
 ```
+Table level Operations:
+```
+amigoscode-# \c customer
+You are now connected to database "customer" as user "amigoscode".
+customer-# \dt
+ public | customer | table | amigoscode
+customer-# \d
+ public | customer             | table    | amigoscode
+ public | customer_id_sequence | sequence | amigoscode
+customer-# \d customer
+ age    | integer                |           |          |
+ id     | integer                |           | not null |
+ email  | character varying(255) |           |          |
+ name   | character varying(255) |           |          |
+customer=# insert into customer (id, age, email, name) VALUES (nextval('customer_id_sequence'), 28,'prk@gmail.com','Pratik');
+INSERT 0 1
+customer=# insert into customer (id, age, email, name) VALUES (nextval('customer_id_sequence'), 26,'iam@gmail.com','Saurabh');
+INSERT 0 1
+customer=# Select * from customer;
+  28 |  1 | prk@gmail.com | Pratik
+  26 |  2 | iam@gmail.com | Saurabh
+```
 
 # Dependacies Added in pom.xml:
 - [postgresql JDBC Driver](https://jdbc.postgresql.org/)

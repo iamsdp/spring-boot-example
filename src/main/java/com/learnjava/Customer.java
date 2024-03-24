@@ -9,7 +9,9 @@ public class Customer {
     @Id
     @SequenceGenerator(
             name = "customer_id_sequence",
-            sequenceName = "customer_id_sequence"
+            sequenceName = "customer_id_sequence",
+            // Allocation size will increment count for id so here id will be 1,2,3,...default it was 50 hence 1,51,101,...
+            allocationSize = 1
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
